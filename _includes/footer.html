@@ -1,29 +1,8 @@
 <footer class="py-12">
   <div class="max-w-4xl mx-auto px-6">
-    <div class="flex justify-center gap-6 text-text-muted">
-      {% if site.email %}
-      <a href="mailto:{{ site.email }}" class="no-underline hover:text-text" aria-label="Email">
-        {% include icons/envelope.html class="w-6 h-6" %}
-      </a>
-      {% endif %}
-      {% if site.github_username %}
-      <a href="https://github.com/{{ site.github_username }}" class="no-underline hover:text-text" aria-label="GitHub">
-        {% include icons/github.html class="w-6 h-6" %}
-      </a>
-      {% endif %}
-      {% if site.google_scholar %}
-      <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" class="no-underline hover:text-text" aria-label="Google Scholar">
-        <i class="ai ai-google-scholar text-2xl"></i>
-      </a>
-      {% endif %}
-      {% if site.researchgate %}
-      <a href="{{ site.researchgate }}" class="no-underline hover:text-text" aria-label="ResearchGate">
-        <i class="ai ai-researchgate text-2xl"></i>
-      </a>
-      {% endif %}
-    </div>
-    <p class="text-center text-text-muted text-sm mt-6">
-      Template adapted from <a href="https://github.com/keunhong/keunhong.github.io">here</a>.
+    <p class="text-center text-text-muted text-sm">
+      <a href="https://github.com/{{ site.github_username }}/{{ site.github_username }}.github.io">Website source on GitHub</a>,
+      adapted from <a href="https://github.com/keunhong/keunhong.github.io">here</a>.
     </p>
   </div>
 </footer>
