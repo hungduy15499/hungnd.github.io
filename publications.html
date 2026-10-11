@@ -8,7 +8,7 @@ permalink: /publications/
   <div class="max-w-4xl mx-auto px-6">
     <h1 class="font-display text-3xl md:text-4xl font-semibold text-text mb-2">Publications</h1>
     {% if site.corresponding %}
-    <p class="text-text-muted text-sm font-sans mb-4">(*Corresponding author)</p>
+    <p class="text-text-muted text-sm font-sans mb-4">({{ site.corresponding_mark | default: "*" }}Corresponding author)</p>
     {% endif %}
     {% include publications-list.html %}
   </div>

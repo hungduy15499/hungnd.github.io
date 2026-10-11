@@ -26,6 +26,7 @@ me_last: "Nguyen"
 me_display: "Hung D. Nguyen"
 # Corresponding authors: marked with * in the publication list.
 # Write names as in BibTeX ("Last, First").
+corresponding_mark: "*"   # symbol after corresponding authors, e.g. "*" or "†"
 corresponding:
   - "Ha, Jeongseok"
   - "Nguyen, Chuyen T."

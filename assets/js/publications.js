@@ -141,11 +141,13 @@
       name.first.toLowerCase().indexOf(me.first.split(/\s+/)[0].toLowerCase()) === 0;
   }
 
+  var corrMark = '*';
+
   function formatAuthors(str, me, corr) {
     if (!str) return '';
     var names = str.split(/\s+and\s+/i).map(parseName);
     var parts = names.map(function (nm) {
-      var star = isCorresponding(nm, corr) ? '<span class="pub-corr" title="Corresponding author">*</span>' : '';
+      var star = isCorresponding(nm, corr) ? '<span class="pub-corr" title="Corresponding author">' + esc(corrMark) + '</span>' : '';
       if (isMe(nm, me)) return '<strong class="pub-me">' + esc(me.display || (nm.first + ' ' + nm.last)) + '</strong>' + star;
       if (nm.last.toLowerCase() === 'others') return 'et al.';
       return esc((initials(nm.first) + ' ' + nm.last).trim()) + star;
@@ -263,6 +265,7 @@
         fetch(el.getAttribute('data-bib'), { cache: 'no-cache' })
           .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
           .then(function (txt) {
+            corrMark = el.dataset.corrMark || '*';
             el.innerHTML = render(txt, {
               me: { first: el.dataset.meFirst || '', last: el.dataset.meLast || '', display: el.dataset.meDisplay || '' },
               max: el.dataset.max ? parseInt(el.dataset.max, 10) : 0,
