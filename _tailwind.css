@@ -151,11 +151,13 @@
   font-weight: 700;
 }
 .publications .pub-corr {
-  /* nudge the asterisk up a little (tweak `top` to taste: more negative = higher) */
+  /* Asterisk size and height. Tweak:
+     font-size  -> bigger/smaller star
+     top        -> more negative = higher, less negative = lower */
+  font-size: 0.75em;
   position: relative;
-  top: -0.35em;
+  top: -0.15em;
   line-height: 0;
-  margin-left: 1px;
   color: var(--color-text);
 }
 .publications .pub-links {
