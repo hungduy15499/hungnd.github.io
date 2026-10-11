@@ -151,6 +151,11 @@
   font-weight: 700;
 }
 .publications .pub-corr {
+  /* nudge the asterisk up a little (tweak `top` to taste: more negative = higher) */
+  position: relative;
+  top: -0.25em;
+  line-height: 0;
+  margin-left: 1px;
   color: var(--color-text);
 }
 .publications .pub-links {
