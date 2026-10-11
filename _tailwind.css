@@ -191,22 +191,25 @@
 .home-hero-text h1 .native {
   font-weight: 500;
 }
-.home-hero-text p {
+.home-bio p {
   color: var(--color-text-body);
-  margin: 0.35rem 0;
+  line-height: 1.65;
+  margin: 0;
 }
-.home-hero-text a.email {
-  text-decoration: none;
-}
-.home-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.1rem;
-  margin-top: 0.9rem !important;
-}
-.home-links a {
+.home-bio a {
   color: var(--color-text);
-  text-decoration-color: var(--color-text-muted);
+}
+.home-contact {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+}
+.home-contact p {
+  color: var(--color-text-body);
+  margin: 0.15rem 0;
+}
+.home-contact .label {
+  color: var(--color-text);
+  font-weight: 600;
 }
 .home-section {
   margin-top: 2.5rem;

@@ -4,7 +4,7 @@ title: Hung D. Nguyen
 ---
 {%- assign p = site.data.profile -%}
 
-<!-- ============ Header ============ -->
+<!-- ============ Header: name, bio, contact, links ============ -->
 <section class="home-hero">
   <div class="home-wrap home-hero-inner">
     {% if site.portrait %}
@@ -12,29 +12,46 @@ title: Hung D. Nguyen
     {% endif %}
     <div class="home-hero-text">
       <h1>{{ site.name }}{% if p.native_name %} <span class="native">({{ p.native_name }})</span>{% endif %}</h1>
-      {% if p.affiliation %}<p>{{ p.affiliation }}</p>{% endif %}
-      {% if p.office %}<p>Office: {{ p.office }}</p>{% endif %}
-      {% if site.email %}<p>Email: <a href="mailto:{{ site.email }}" class="email">{{ site.email }}</a></p>{% endif %}
-      <p class="home-links">
-        {% if site.cv_url %}<a href="{{ site.cv_url }}" target="_blank" rel="noopener">CV</a>{% endif %}
-        {% if site.google_scholar %}<a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
-        {% if p.linkedin and p.linkedin != "" %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-        {% if site.researchgate %}<a href="{{ site.researchgate }}" target="_blank" rel="noopener">ResearchGate</a>{% endif %}
-        {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
-      </p>
+
+      {% if p.bio %}<div class="home-bio">{{ p.bio | markdownify }}</div>{% endif %}
+
+      <div class="home-contact">
+        {% if p.office %}<p><span class="label">Office:</span> {{ p.office }}</p>{% endif %}
+        {% if site.email %}<p><span class="label">Email:</span> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endif %}
+      </div>
+
+      <!-- Links (same icon style as the original template) -->
+      <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
+        {% if site.cv_url %}
+        <a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+          {% include icons/file.html class="w-4 h-4 mr-1.5" %}
+          CV
+        </a>
+        {% endif %}
+        {% if site.google_scholar %}
+        <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+          <i class="ai ai-google-scholar mr-1.5"></i>
+          Scholar
+        </a>
+        {% endif %}
+        {% if site.researchgate %}
+        <a href="{{ site.researchgate }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+          <i class="ai ai-researchgate mr-1.5"></i>
+          ResearchGate
+        </a>
+        {% endif %}
+        {% if p.linkedin and p.linkedin != "" %}
+        <a href="{{ p.linkedin }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+          <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
 
 <div class="home-wrap home-body">
-
-  <!-- ============ Bio ============ -->
-  {% if p.bio %}
-  <section class="home-section">
-    <h2>Bio</h2>
-    <div class="home-prose">{{ p.bio | markdownify }}</div>
-  </section>
-  {% endif %}
 
   <!-- ============ News ============ -->
   {% if site.data.news.size > 0 %}
@@ -56,20 +73,6 @@ title: Hung D. Nguyen
       </ul>
     </details>
     {% endif %}
-  </section>
-  {% endif %}
-
-  <!-- ============ Education ============ -->
-  {% if site.data.education %}
-  <section class="home-section">
-    <h2>Education</h2>
-    <ul class="home-list">
-      {% for e in site.data.education %}
-      <li><em>{{ e.period }}:</em> {{ e.school }}
-        {% if e.details %}<ul>{% for d in e.details %}<li>{{ d }}</li>{% endfor %}</ul>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
   </section>
   {% endif %}
 

@@ -1,16 +1,17 @@
 # ---------------------------------------------------------------
-#  Home page header + Bio.  (Name, email, CV, Scholar, ResearchGate
+#  Home page header (name line, bio, contact).  (Name, email, CV, Scholar, ResearchGate
 #  and GitHub come from _config.yml.)
 # ---------------------------------------------------------------
 native_name: "Nguyễn Duy Hùng"
-affiliation: "Ph.D. Candidate, Korea Advanced Institute of Science and Technology (KAIST)"
 office: "#620, N1 Building, 291 Daehak-ro, Yuseong-gu, Daejeon 34141, Republic of Korea."
 linkedin: ""          # paste your LinkedIn profile URL here, e.g. "https://www.linkedin.com/in/xxx/"
 
-# Bio (Markdown allowed: [text](link), **bold**, *italic*)
+# Bio — shown right under your name (Markdown allowed: [text](link), **bold**)
 bio: |
-  Hi, my name is Hung, and I'm from Vietnam. I'm currently a Ph.D. candidate at the
-  [Coding and Communications Laboratory (CoCoA)](https://cocoa.kaist.ac.kr/index.html), KAIST,
-  under the supervision of Professor [Jeongseok Ha](https://cocoa.kaist.ac.kr/members1.html).
-  My research interests lie in wireless communications, with a focus on non-terrestrial networks,
-  physical layer security, and covert communications.
+  I'm a Ph.D. candidate in the School of Electrical Engineering at the Korea Advanced Institute of Science and Technology (KAIST).
+  I work in the [Coding and Communications Laboratory](https://cocoa.kaist.ac.kr/index.html) under the supervision of
+  Prof. [Jeongseok Ha](https://cocoa.kaist.ac.kr/members1.html).
+  Prior to that, I received my B.S. degree (Talented Program) in Electronics and Telecommunications Engineering from
+  Hanoi University of Science and Technology (HUST), Vietnam.
+  During my time at HUST, I worked as a research intern at [CTARG](https://sites.google.com/site/ntchuyenkyoto/lab?authuser=0)
+  under the supervision of Prof. [Chuyen T. Nguyen](https://sites.google.com/site/ntchuyenkyoto/home?authuser=0).
