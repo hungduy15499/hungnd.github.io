@@ -1,4 +1,4 @@
-# hungduy15499.github.io
+# hungngduy.github.io
 
 Personal academic website, built with Jekyll + Tailwind CSS and deployed by GitHub Actions.
 
