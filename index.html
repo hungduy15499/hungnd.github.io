@@ -4,12 +4,13 @@ title: Hung D. Nguyen
 ---
 {%- assign p = site.data.profile -%}
 
-<!-- ============ Header: name, bio, contact, links ============ -->
+<!-- ============ Header: photo (left); name, bio, contact, links (right) ============ -->
 <section class="home-hero">
   <div class="home-wrap home-hero-inner">
     {% if site.portrait %}
     <img src="{{ '/images/' | append: site.portrait | relative_url }}" alt="{{ site.name }}" class="home-portrait">
     {% endif %}
+
     <div class="home-hero-text">
       <h1>{{ site.name }}{% if p.native_name %} <span class="native">({{ p.native_name }})</span>{% endif %}</h1>
 
@@ -20,18 +21,18 @@ title: Hung D. Nguyen
         {% if site.email %}<p><span class="label">Email:</span> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endif %}
       </div>
 
-      <!-- Links (same icon style as the original template) -->
-      <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
+      <!-- Profile links (same icon style as the original template) -->
+      <div class="home-links">
         {% if site.cv_url %}
         <a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
           {% include icons/file.html class="w-4 h-4 mr-1.5" %}
-          CV
+          Curriculum Vitae
         </a>
         {% endif %}
         {% if site.google_scholar %}
         <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
           <i class="ai ai-google-scholar mr-1.5"></i>
-          Scholar
+          Google Scholar
         </a>
         {% endif %}
         {% if site.researchgate %}

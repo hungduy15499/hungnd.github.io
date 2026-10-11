@@ -185,10 +185,19 @@
   .home-hero-inner { flex-direction: row; align-items: flex-start; }
 }
 .home-portrait {
-  width: 11rem;
+  width: 17rem;              /* photo width — chosen so the photo height matches the text column */
   aspect-ratio: 4 / 5;
   object-fit: cover;
   flex-shrink: 0;
+}
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1rem;
+}
+@media (max-width: 767px) {
+  .home-links { justify-content: center; }
 }
 .home-hero-text h1 {
   font-size: 2rem;
