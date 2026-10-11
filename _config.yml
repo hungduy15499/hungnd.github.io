@@ -25,7 +25,7 @@ email: hungnd@kaist.ac.kr
 description: |
   I'm currently a Ph.D. candidate at the [Coding and Communications Laboratory](https://cocoa.kaist.ac.kr/index.html), KAIST, under the supervision of Professor [Jeongseok Ha](https://cocoa.kaist.ac.kr/members1.html). My research interests lie in wireless communications, with a focus on non-terrestrial networks, physical layer security, and covert communications. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://hungduy15499.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://hungngduy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 researchgate: "https://www.researchgate.net/profile/Hung-Nguyen-709"
 cv_url: "https://drive.google.com/file/d/1falcSq5ZvPXa4lBWqBVGGHXnWr2-Skm0/view"
 portrait: portrait.jpg   # photo in images/ (4:5 ratio). Leave empty to hide.
@@ -35,7 +35,7 @@ portrait: portrait.jpg   # photo in images/ (4:5 ratio). Leave empty to hide.
 me_first: "Hung D."
 me_last: "Nguyen"
 me_display: "Hung D. Nguyen"
-github_username: hungduy15499
+github_username: hungngduy
 google_scholar: Ac0Z2XQAAAAJ
 google_analytics: 
 
