@@ -246,11 +246,9 @@
 .news-list li {
   display: flex;
   gap: 1rem;
-  padding: 0.45rem 0;
-  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 0.3rem 0;
   color: var(--color-text-body);
 }
-.news-list li:last-child { border-bottom: none; }
 .news-date {
   flex-shrink: 0;
   width: 5.5rem;

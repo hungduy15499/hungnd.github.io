@@ -1,17 +1,18 @@
 # ---------------------------------------------------------------
-#  NEWS — newest first. Add a new item at the TOP:
+#  NEWS — newest first. Add a new item at the TOP, e.g.:
 #
 #  - date: "Oct 2026"
-#    text: "Our paper [Title](https://doi.org/...) has been accepted to **IEEE TVT**."
+#    text: 'The paper [*Title*](https://doi.org/...) was accepted in **IEEE TVT**.'
 #
-#  `text` supports Markdown. The newest 6 items are shown on the home
-#  page; older ones go into a "Show older news" toggle.
+#  `text` supports Markdown: [text](link), *italic*, **bold**.
+#  The newest 6 items are shown on the home page; older ones go
+#  into a "Show older news" toggle.
 # ---------------------------------------------------------------
-- date: "Oct 2026"
-  text: "Our paper *Delay-Doppler Domain Artificial Fast Fading for Secure OTFS Communications* will be presented at **ICTC 2026**, Jeju, South Korea."
+- date: "May 2026"
+  text: 'I presented the paper [*UAV-Assisted Downlink Satellite Covert Communication*](https://doi.org/10.1109/ICC59461.2026.11588136) at **IEEE ICC 2026**, Glasgow, UK.'
 
-- date: "2026"
-  text: "Our paper [*Fluid Antenna-Aided Cooperative Jamming in Uplink IoT Systems*](https://doi.org/10.1109/JIOT.2026.3711144) has been published in **IEEE Internet of Things Journal**."
+- date: "May 2026"
+  text: 'A correspondence [*Comments on “On Covert Communication Performance With Outdated CSI in Wireless Greedy Relay Systems”*](https://doi.org/10.1109/TIFS.2026.3695425) was accepted in **IEEE Transactions on Information Forensics and Security (TIFS)**.'
 
-- date: "2026"
-  text: "Our paper [*UAV-Assisted Downlink Satellite Covert Communication*](https://doi.org/10.1109/ICC59461.2026.11588136) has been presented at **IEEE ICC 2026**, Glasgow, UK."
+- date: "Nov 2025"
+  text: 'The paper [*Beam Divergence Angle Optimization for Secure FSO-Based Space–Air Communications*](https://doi.org/10.1109/TAES.2025.3635574) was accepted for publication in **IEEE Transactions on Aerospace and Electronic Systems (TAES)**.'
