@@ -55,7 +55,7 @@ title: Hung D. Nguyen
 
   <!-- ============ News ============ -->
   {% if site.data.news.size > 0 %}
-  {%- assign news_max = site.data.home.news_max | default: 6 -%}
+  {%- assign news_max = 6 -%}{%- comment -%} newest N news items shown; older ones go into "Show older news" {%- endcomment -%}
   <section class="home-section">
     <h2>News</h2>
     <ul class="news-list">

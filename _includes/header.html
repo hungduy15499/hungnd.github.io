@@ -12,11 +12,13 @@
             Publications
           </a>
         </li>
+        {% if site.posts.size > 0 %}
         <li>
           <a href="{{ '/blog/' | relative_url }}" class="text-text-muted no-underline hover:text-text {% if page.url contains '/blog' or page.layout == 'post' %}text-text font-bold{% endif %}">
             Blog
           </a>
         </li>
+        {% endif %}
       </ul>
     </nav>
   </div>

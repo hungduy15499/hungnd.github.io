@@ -4,9 +4,8 @@
 #  - date: "Oct 2026"
 #    text: "Our paper [Title](https://doi.org/...) has been accepted to **IEEE TVT**."
 #
-#  `text` supports Markdown. Only the newest `news_max` items (see
-#  home.yml below) are shown on the home page; the rest are in a
-#  "Show older news" toggle.
+#  `text` supports Markdown. The newest 6 items are shown on the home
+#  page; older ones go into a "Show older news" toggle.
 # ---------------------------------------------------------------
 - date: "Oct 2026"
   text: "Our paper *Delay-Doppler Domain Artificial Fast Fading for Secure OTFS Communications* will be presented at **ICTC 2026**, Jeju, South Korea."

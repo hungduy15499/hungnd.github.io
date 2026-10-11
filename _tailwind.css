@@ -221,12 +221,6 @@
   color: var(--color-text);
   margin-bottom: 1rem;
 }
-.home-prose p {
-  color: var(--color-text-body);
-}
-.home-prose a {
-  color: var(--color-text);
-}
 .home-list, .home-list ul {
   list-style: square;
   padding-left: 1.25rem;
