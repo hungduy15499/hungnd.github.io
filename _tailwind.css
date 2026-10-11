@@ -151,8 +151,6 @@
   font-weight: 700;
 }
 .publications .pub-corr {
-  font-size: 0.75em;
-  margin-left: 1px;
   color: var(--color-text);
 }
 .publications .pub-links {

@@ -145,7 +145,7 @@
     if (!str) return '';
     var names = str.split(/\s+and\s+/i).map(parseName);
     var parts = names.map(function (nm) {
-      var star = isCorresponding(nm, corr) ? '<sup class="pub-corr" title="Corresponding author">*</sup>' : '';
+      var star = isCorresponding(nm, corr) ? '<span class="pub-corr" title="Corresponding author">*</span>' : '';
       if (isMe(nm, me)) return '<strong class="pub-me">' + esc(me.display || (nm.first + ' ' + nm.last)) + '</strong>' + star;
       if (nm.last.toLowerCase() === 'others') return 'et al.';
       return esc((initials(nm.first) + ' ' + nm.last).trim()) + star;
