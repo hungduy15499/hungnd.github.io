@@ -197,7 +197,7 @@
 }
 .home-side-links {
   display: grid;
-  grid-template-columns: auto auto;   /* 2 x 2: CV | Google Scholar / ResearchGate | LinkedIn */
+  grid-template-columns: auto auto;   /* 2 x 2: Google Scholar | Vitae / ResearchGate | LinkedIn */
   justify-content: space-between;
   gap: 0.3rem 0.6rem;
   margin-top: 0.6rem;

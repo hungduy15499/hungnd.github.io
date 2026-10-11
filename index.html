@@ -12,18 +12,18 @@ title: Hung D. Nguyen
       <img src="{{ '/images/' | append: site.portrait | relative_url }}" alt="{{ site.name }}" class="home-portrait">
       {% endif %}
 
-      <!-- Profile links: 2 x 2 grid under the photo -->
+      <!-- Profile links: 2 x 2 grid under the photo (Google Scholar | Vitae / ResearchGate | LinkedIn) -->
       <div class="home-side-links">
-          {% if site.cv_url %}
-          <a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
-            {% include icons/file.html class="w-4 h-4 mr-1.5" %}
-            CV
-          </a>
-          {% endif %}
           {% if site.google_scholar %}
           <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
             <i class="ai ai-google-scholar mr-1.5"></i>
             Google Scholar
+          </a>
+          {% endif %}
+          {% if site.cv_url %}
+          <a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+            {% include icons/file.html class="w-4 h-4 mr-1.5" %}
+            Vitae
           </a>
           {% endif %}
           {% if site.researchgate %}
