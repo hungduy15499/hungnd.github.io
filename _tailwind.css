@@ -153,7 +153,7 @@
 .publications .pub-corr {
   /* nudge the asterisk up a little (tweak `top` to taste: more negative = higher) */
   position: relative;
-  top: -0.4em;
+  top: -0.35em;
   line-height: 0;
   margin-left: 1px;
   color: var(--color-text);
