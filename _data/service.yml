@@ -1,0 +1,11 @@
+# Academic service. Each group has a title and a list of items.
+reviewer:
+  - title: "IEEE Conferences"
+    items:
+      - "GLOBECOM ('25, '26)"
+      - "PIMRC ('24, '25, '26)"
+      - "ICMLCN ('25)"
+  - title: "IEEE Journals"
+    items:
+      - "IEEE Transactions on Cognitive Communications and Networking"
+      - "IEEE Internet of Things Journal"

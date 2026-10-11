@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------
+#  NEWS — newest first. Add a new item at the TOP:
+#
+#  - date: "Oct 2026"
+#    text: "Our paper [Title](https://doi.org/...) has been accepted to **IEEE TVT**."
+#
+#  `text` supports Markdown. Only the newest `news_max` items (see
+#  home.yml below) are shown on the home page; the rest are in a
+#  "Show older news" toggle.
+# ---------------------------------------------------------------
+- date: "Oct 2026"
+  text: "Our paper *Delay-Doppler Domain Artificial Fast Fading for Secure OTFS Communications* will be presented at **ICTC 2026**, Jeju, South Korea."
+
+- date: "2026"
+  text: "Our paper [*Fluid Antenna-Aided Cooperative Jamming in Uplink IoT Systems*](https://doi.org/10.1109/JIOT.2026.3711144) has been published in **IEEE Internet of Things Journal**."
+
+- date: "2026"
+  text: "Our paper [*UAV-Assisted Downlink Satellite Covert Communication*](https://doi.org/10.1109/ICC59461.2026.11588136) has been presented at **IEEE ICC 2026**, Glasgow, UK."

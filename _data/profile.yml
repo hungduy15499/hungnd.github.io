@@ -1,0 +1,16 @@
+# ---------------------------------------------------------------
+#  Home page header + Bio.  (Name, email, CV, Scholar, ResearchGate
+#  and GitHub come from _config.yml.)
+# ---------------------------------------------------------------
+native_name: "Nguyễn Duy Hùng"
+affiliation: "Ph.D. Candidate, Korea Advanced Institute of Science and Technology (KAIST)"
+office: "#620, N1 Building, 291 Daehak-ro, Yuseong-gu, Daejeon 34141, Republic of Korea."
+linkedin: ""          # paste your LinkedIn profile URL here, e.g. "https://www.linkedin.com/in/xxx/"
+
+# Bio (Markdown allowed: [text](link), **bold**, *italic*)
+bio: |
+  Hi, my name is Hung, and I'm from Vietnam. I'm currently a Ph.D. candidate at the
+  [Coding and Communications Laboratory (CoCoA)](https://cocoa.kaist.ac.kr/index.html), KAIST,
+  under the supervision of Professor [Jeongseok Ha](https://cocoa.kaist.ac.kr/members1.html).
+  My research interests lie in wireless communications, with a focus on non-terrestrial networks,
+  physical layer security, and covert communications.

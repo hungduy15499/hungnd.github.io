@@ -1,0 +1,10 @@
+# Education — newest first. `details` is a list of sub-bullets.
+- period: "2022 – Now"
+  school: "Korea Advanced Institute of Science and Technology (KAIST), South Korea"
+  details:
+    - "Integrated M.S.–Ph.D. in Electrical Engineering"
+
+- period: "2017 – 2021"
+  school: "Hanoi University of Science and Technology (HUST), Vietnam"
+  details:
+    - "B.S. in Electronics and Telecommunications Engineering (Talent Program)"

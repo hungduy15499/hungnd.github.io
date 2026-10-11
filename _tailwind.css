@@ -154,3 +154,109 @@
   font-family: var(--font-sans);
   font-size: 0.85em;
 }
+
+/* Home page sections */
+.home-wrap {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.home-hero {
+  padding: 3rem 0 2rem;
+}
+.home-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+@media (min-width: 768px) {
+  .home-hero-inner { flex-direction: row; align-items: flex-start; }
+}
+.home-portrait {
+  width: 11rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.home-hero-text h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 0.9rem;
+}
+.home-hero-text h1 .native {
+  font-weight: 500;
+}
+.home-hero-text p {
+  color: var(--color-text-body);
+  margin: 0.35rem 0;
+}
+.home-hero-text a.email {
+  text-decoration: none;
+}
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin-top: 0.9rem !important;
+}
+.home-links a {
+  color: var(--color-text);
+  text-decoration-color: var(--color-text-muted);
+}
+.home-section {
+  margin-top: 2.5rem;
+}
+.home-section h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.home-prose p {
+  color: var(--color-text-body);
+}
+.home-prose a {
+  color: var(--color-text);
+}
+.home-list, .home-list ul {
+  list-style: square;
+  padding-left: 1.25rem;
+  color: var(--color-text-body);
+}
+.home-list li {
+  margin: 0.3rem 0;
+}
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-body);
+}
+.news-list li:last-child { border-bottom: none; }
+.news-date {
+  flex-shrink: 0;
+  width: 5.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  padding-top: 0.2rem;
+}
+.news-older summary {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
