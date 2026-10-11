@@ -4,12 +4,42 @@ title: Hung D. Nguyen
 ---
 {%- assign p = site.data.profile -%}
 
-<!-- ============ Header: photo (left); name, bio, contact, links (right) ============ -->
+<!-- ============ Header: photo + 2x2 links (left); name, bio, contact (right) ============ -->
 <section class="home-hero">
   <div class="home-wrap home-hero-inner">
-    {% if site.portrait %}
-    <img src="{{ '/images/' | append: site.portrait | relative_url }}" alt="{{ site.name }}" class="home-portrait">
-    {% endif %}
+    <div class="home-side">
+      {% if site.portrait %}
+      <img src="{{ '/images/' | append: site.portrait | relative_url }}" alt="{{ site.name }}" class="home-portrait">
+      {% endif %}
+
+      <!-- Profile links: 2 x 2 grid under the photo -->
+      <div class="home-side-links">
+          {% if site.cv_url %}
+          <a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+            {% include icons/file.html class="w-4 h-4 mr-1.5" %}
+            CV
+          </a>
+          {% endif %}
+          {% if site.google_scholar %}
+          <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+            <i class="ai ai-google-scholar mr-1.5"></i>
+            Google Scholar
+          </a>
+          {% endif %}
+          {% if site.researchgate %}
+          <a href="{{ site.researchgate }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+            <i class="ai ai-researchgate mr-1.5"></i>
+            ResearchGate
+          </a>
+          {% endif %}
+          {% if p.linkedin and p.linkedin != "" %}
+          <a href="{{ p.linkedin }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+            <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          {% endif %}
+      </div>
+    </div>
 
     <div class="home-hero-text">
       <h1>{{ site.name }}{% if p.native_name %} <span class="native">({{ p.native_name }})</span>{% endif %}</h1>
@@ -19,34 +49,6 @@ title: Hung D. Nguyen
       <div class="home-contact">
         {% if p.office %}<p><span class="label">Office:</span> {{ p.office }}</p>{% endif %}
         {% if site.email %}<p><span class="label">Email:</span> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endif %}
-      </div>
-
-      <!-- Profile links (same icon style as the original template) -->
-      <div class="home-links">
-        {% if site.cv_url %}
-        <a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
-          {% include icons/file.html class="w-4 h-4 mr-1.5" %}
-          Curriculum Vitae
-        </a>
-        {% endif %}
-        {% if site.google_scholar %}
-        <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
-          <i class="ai ai-google-scholar mr-1.5"></i>
-          Google Scholar
-        </a>
-        {% endif %}
-        {% if site.researchgate %}
-        <a href="{{ site.researchgate }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
-          <i class="ai ai-researchgate mr-1.5"></i>
-          ResearchGate
-        </a>
-        {% endif %}
-        {% if p.linkedin and p.linkedin != "" %}
-        <a href="{{ p.linkedin }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
-          <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-        {% endif %}
       </div>
     </div>
   </div>

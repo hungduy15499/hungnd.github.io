@@ -166,7 +166,7 @@
 
 /* Home page sections */
 .home-wrap {
-  max-width: 56rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -184,20 +184,33 @@
 @media (min-width: 768px) {
   .home-hero-inner { flex-direction: row; align-items: flex-start; }
 }
+/* Left column: photo + 2x2 profile links.
+   `width` is chosen so that photo + links ≈ height of the text on the right. */
+.home-side {
+  flex-shrink: 0;
+  width: 12.75rem;           /* photo width */
+}
 .home-portrait {
-  width: 17rem;              /* photo width — chosen so the photo height matches the text column */
+  width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+.home-side-links {
+  display: grid;
+  grid-template-columns: auto auto;   /* 2 x 2: CV | Google Scholar / ResearchGate | LinkedIn */
+  justify-content: space-between;
+  gap: 0.3rem 0.6rem;
+  margin-top: 0.6rem;
+}
+.home-side-links a {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.home-side-links i,
+.home-side-links svg {
+  width: 1rem;
+  text-align: center;
   flex-shrink: 0;
-}
-.home-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin-top: 1rem;
-}
-@media (max-width: 767px) {
-  .home-links { justify-content: center; }
 }
 .home-hero-text h1 {
   font-size: 2rem;
