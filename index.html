@@ -1,8 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>Hung – KAIST</title></head>
-<body>
-  <h1>Hung</h1>
-  <p>PhD researcher, Wireless Communications, KAIST</p>
-</body>
-</html>
+---
+layout: default
+title: Hung D. Nguyen
+---
+
+<!-- Hero Section -->
+<section class="py-12 md:py-16 bg-surface">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex flex-col items-center text-center md:text-left md:flex-row md:items-start gap-8">
+      {% if site.portrait %}
+      <!-- Portrait -->
+      <div class="flex-shrink-0">
+        <img src="{{ '/images/' | append: site.portrait | relative_url }}"
+             alt="{{ site.name }}"
+             class="w-48 md:w-56 aspect-[4/5] object-cover rounded-sm">
+      </div>
+      {% endif %}
+
+      <!-- Bio -->
+      <div class="flex-1">
+        <h1 class="font-display text-3xl md:text-4xl font-semibold text-text">
+          Hello, I'm {{ site.name }}
+        </h1>
+        <p class="text-text-muted font-sans text-sm mt-1">{{ site.position }}</p>
+        <div class="text-text-body mt-4 max-w-prose leading-relaxed prose">
+          {{ site.description | markdownify }}
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+          {% include social-links.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Publications -->
+<section class="relative py-12 md:py-16">
+  <div class="absolute inset-0 bg-surface-muted" style="mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);"></div>
+  <div class="relative max-w-4xl mx-auto px-6">
+    <h2 class="font-display text-2xl font-semibold text-text mb-6">Recent Publications</h2>
+    {% include publications-list.html max=5 %}
+    <p class="mt-6 font-sans text-sm">
+      <a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
+    </p>
+  </div>
+</section>

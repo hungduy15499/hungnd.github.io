@@ -1,0 +1,31 @@
+{%- comment -%} Row of profile links. Each link only appears if its value is set in _config.yml. {%- endcomment -%}
+{% if site.cv_url %}
+<a href="{{ site.cv_url }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+  {% include icons/file.html class="w-4 h-4 mr-1.5" %}
+  CV
+</a>
+{% endif %}
+{% if site.google_scholar %}
+<a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+  <i class="ai ai-google-scholar mr-1.5"></i>
+  Scholar
+</a>
+{% endif %}
+{% if site.researchgate %}
+<a href="{{ site.researchgate }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+  <i class="ai ai-researchgate mr-1.5"></i>
+  ResearchGate
+</a>
+{% endif %}
+{% if site.github_username %}
+<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+  {% include icons/github.html class="w-4 h-4 mr-1.5" %}
+  GitHub
+</a>
+{% endif %}
+{% if site.email %}
+<a href="mailto:{{ site.email }}" class="inline-flex items-center text-text-muted hover:text-text font-sans text-sm no-underline">
+  {% include icons/envelope.html class="w-4 h-4 mr-1.5" %}
+  Email
+</a>
+{% endif %}

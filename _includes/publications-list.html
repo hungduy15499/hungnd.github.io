@@ -1,0 +1,14 @@
+{%- comment -%}
+  Publications rendered from bib/papers.bib by assets/js/publications.js.
+  Usage: {% include publications-list.html %}            (full, grouped list)
+         {% include publications-list.html max=5 %}      (N most recent)
+{%- endcomment -%}
+<div class="publications"
+     data-bib="{{ '/bib/papers.bib' | relative_url }}"
+     data-me-first="{{ site.me_first }}"
+     data-me-last="{{ site.me_last }}"
+     data-me-display="{{ site.me_display }}"
+     {% if include.max %}data-max="{{ include.max }}"{% endif %}>
+  <p class="text-text-muted text-sm">Loading publications&hellip;</p>
+</div>
+<script src="{{ '/assets/js/publications.js' | relative_url }}" defer></script>
