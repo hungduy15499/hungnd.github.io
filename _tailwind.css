@@ -161,8 +161,7 @@
   color: var(--color-text);
 }
 .publications .pub-links {
-  font-family: var(--font-sans);
-  font-size: 0.85em;
+  white-space: nowrap;
 }
 
 /* Home page sections */

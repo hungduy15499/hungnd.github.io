@@ -201,14 +201,12 @@
     if (tail.length) text += ' ' + tail.join(', ');
     text = text.replace(/,$/, '');
     if (f.note) text += (tail.length || venue ? ', ' : ' ') + '<em class="pub-note">' + esc(f.note) + '</em>';
-    text += '.';
-
     var extra = [];
-    if (f.arxiv) extra.push(link('https://arxiv.org/abs/' + f.arxiv, 'arXiv'));
+    if (f.arxiv) extra.push(link('https://arxiv.org/pdf/' + f.arxiv, 'arXiv'));
     if (f.pdf) extra.push(link(f.pdf, 'PDF'));
     if (f.code) extra.push(link(f.code, 'Code'));
     if (extra.length) text += ' <span class="pub-links">' + extra.map(function (x) { return '[' + x + ']'; }).join(' ') + '</span>';
-    return text;
+    return text + '.';
   }
 
   function sortKey(e) {
