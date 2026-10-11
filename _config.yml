@@ -24,6 +24,11 @@ portrait: portrait.jpg   # in images/ (4:5 ratio). Leave empty to hide.
 me_first: "Hung D."
 me_last: "Nguyen"
 me_display: "Hung D. Nguyen"
+# Corresponding authors: marked with * in the publication list.
+# Write names as in BibTeX ("Last, First").
+corresponding:
+  - "Ha, Jeongseok"
+  - "Nguyen, Chuyen T."
 
 # Bio, office, news, academic service -> edit files in _data/
 

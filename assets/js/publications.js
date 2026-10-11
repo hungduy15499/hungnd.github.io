@@ -13,6 +13,8 @@
  *   arxiv = {2501.01234}              -> [arXiv] link
  *   pdf / code                        -> [PDF] / [Code] links
  *   address, month                    -> used for conference papers
+ *
+ * Corresponding authors (list `corresponding` in _config.yml) get a superscript *.
  */
 (function (root) {
   'use strict';
@@ -119,19 +121,34 @@
     }).join(' ');
   }
 
+  // Same person? last name equal, and first name starts with the same first word.
+  function sameName(a, b) {
+    if (!a || !b || !a.last || !b.last) return false;
+    var fa = (a.first.split(/\s+/)[0] || '').toLowerCase();
+    var fb = (b.first.split(/\s+/)[0] || '').toLowerCase();
+    return a.last.toLowerCase() === b.last.toLowerCase() &&
+      (fa.indexOf(fb) === 0 || fb.indexOf(fa) === 0);
+  }
+
+  function isCorresponding(nm, list) {
+    for (var i = 0; i < (list || []).length; i++) if (sameName(nm, list[i])) return true;
+    return false;
+  }
+
   function isMe(name, me) {
     if (!me || !me.last) return false;
     return name.last.toLowerCase() === me.last.toLowerCase() &&
       name.first.toLowerCase().indexOf(me.first.split(/\s+/)[0].toLowerCase()) === 0;
   }
 
-  function formatAuthors(str, me) {
+  function formatAuthors(str, me, corr) {
     if (!str) return '';
     var names = str.split(/\s+and\s+/i).map(parseName);
     var parts = names.map(function (nm) {
-      if (isMe(nm, me)) return '<strong class="pub-me">' + esc(me.display || (nm.first + ' ' + nm.last)) + '</strong>';
+      var star = isCorresponding(nm, corr) ? '<sup class="pub-corr" title="Corresponding author">*</sup>' : '';
+      if (isMe(nm, me)) return '<strong class="pub-me">' + esc(me.display || (nm.first + ' ' + nm.last)) + '</strong>' + star;
       if (nm.last.toLowerCase() === 'others') return 'et al.';
-      return esc((initials(nm.first) + ' ' + nm.last).trim());
+      return esc((initials(nm.first) + ' ' + nm.last).trim()) + star;
     });
     if (parts.length === 1) return parts[0];
     if (parts.length === 2) return parts[0] + ' and ' + parts[1];
@@ -156,13 +173,13 @@
     return '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + text + '</a>';
   }
 
-  function formatEntry(e, me) {
+  function formatEntry(e, me, corr) {
     var f = e.fields;
     var out = [];
     var href = f.doi ? 'https://doi.org/' + f.doi : (f.url || '');
     var title = esc(f.title || 'Untitled');
     var titleHtml = href ? link(href, title) : title;
-    out.push(formatAuthors(f.author, me) + ', “' + titleHtml + ',”');
+    out.push(formatAuthors(f.author, me, corr) + ', “' + titleHtml + ',”');
 
     var venue = f.journal || f.booktitle || '';
     if (venue) {
@@ -221,7 +238,7 @@
         html += '<section class="pub-group pub-' + g.key + '"><h2>' + g.title + '</h2>' +
           '<ul class="' + (g.prefix ? 'pub-list numbered' : 'pub-list bulleted') + '">' +
           items.map(function (e) {
-            return '<li>' + (e.label ? '<span class="pub-label">' + e.label + '</span> ' : '') + formatEntry(e, opts.me) + '</li>';
+            return '<li>' + (e.label ? '<span class="pub-label">' + e.label + '</span> ' : '') + formatEntry(e, opts.me, opts.corresponding) + '</li>';
           }).join('') + '</ul></section>';
       }
       if (g.prefix) labelled = labelled.concat(items);
@@ -230,7 +247,7 @@
     if (opts.max) {
       var recent = labelled.sort(newestFirst).slice(0, opts.max);
       html = '<ul class="pub-list numbered">' + recent.map(function (e) {
-        return '<li><span class="pub-label">' + e.label + '</span> ' + formatEntry(e, opts.me) + '</li>';
+        return '<li><span class="pub-label">' + e.label + '</span> ' + formatEntry(e, opts.me, opts.corresponding) + '</li>';
       }).join('') + '</ul>';
     }
     return html;
@@ -248,7 +265,8 @@
           .then(function (txt) {
             el.innerHTML = render(txt, {
               me: { first: el.dataset.meFirst || '', last: el.dataset.meLast || '', display: el.dataset.meDisplay || '' },
-              max: el.dataset.max ? parseInt(el.dataset.max, 10) : 0
+              max: el.dataset.max ? parseInt(el.dataset.max, 10) : 0,
+              corresponding: (el.dataset.corresponding || '').split(';').filter(function (x) { return x.trim(); }).map(parseName)
             });
           })
           .catch(function (err) {
