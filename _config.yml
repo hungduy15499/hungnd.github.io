@@ -8,6 +8,7 @@ description: >-
   physical layer security, and covert communications.
 url: "https://hungngduy.github.io"
 baseurl: ""
+timezone: Asia/Seoul   # used for the "Last updated" date in the footer
 
 # ---------- Links ----------
 cv_url: "https://drive.google.com/file/d/1falcSq5ZvPXa4lBWqBVGGHXnWr2-Skm0/view"
